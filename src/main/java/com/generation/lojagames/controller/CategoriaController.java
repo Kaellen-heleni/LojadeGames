@@ -1,6 +1,7 @@
 package com.generation.lojagames.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class CategoriaController {
 	}
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Categoria>>getByNome(@PathVariable String nome){
-	 return ResponseEntity.ok(categoriaRepository.findAllByTituloContainingIgnoreCase(nome));
+	 return ResponseEntity.ok(categoriaRepository.findAllByNomeContainingIgnoreCase(nome));
 	}
 	@PostMapping
 	public ResponseEntity<Categoria>post(@Valid @RequestBody Categoria categoria){
